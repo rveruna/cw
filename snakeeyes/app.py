@@ -32,12 +32,12 @@ def do_admin_login():
         session['logged_in'] = True
     else:
         flash('wrong password!')
-    return home()
+    return signup()
 
 @app.route("/logout")
 def logout():
     session['logged_in'] = False
-    return signup()
+    return home()
 
 @app.route('/terms')
 def terms():
