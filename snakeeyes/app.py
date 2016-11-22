@@ -37,7 +37,7 @@ def do_admin_login():
 @app.route("/logout")
 def logout():
     session['logged_in'] = False
-    return home()
+    return signup()
 
 @app.route('/terms')
 def terms():
