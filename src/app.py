@@ -46,7 +46,7 @@ def home():
     g.db.close()
     #except sqlite3.OperationalError:
         #flash("You have no database!")
-    return render_template('inde.html', posts=posts)
+    return render_template('index.html', posts=posts)
 
 #route for search
 @app.route('/ser', methods=['POST'])
