@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="level level-hero hero-home has-hint">
+		<div class="hero-overlay visible-lg"></div>
+		<video loop id=bg-video class=fullscreen-video>
+			<source src="http://alvarez.is/bt/appi.webm" type="video/webm">
+			<source src="http://alvarez.is/bt/appi.mp4" type="video/mp4">
+		</video>
+		<div class="container full-height">
+			<div class=v-align-parent>
+				<div class=v-center>
+					<div class="row">
+						<div class="col-xs-10 col-sm-6">
+							<h1 class="mb-10 heading">Your Blog. <span>Reinvented.</span></h1>
+							<div class="subheading mb-20">Place to leave all the thoughts <br class=hidden-xs>that bother you. </div>
+						</div>
+					</div>
+					<div>
+            <a href="/" class="btn btn-prepend"><i class="prepended icon-append-check" aria-hidden="true"></i>Start writing</a>
+					</div>
+				</div>
+			</div>
+			<div class=hint-arrow></div>
+		</div>
+	</div>
+	<div class=level>
+		<div class="container mb-100 xs-mb-40">
+			<div class=row>
+				<div class="col-sm-5 col-md-4 col-md-offset-2 col-sm-offset-1">
+					<h1 class="mb-10 xs-mb-10 heading color-dark heading-bordered">Popular blogs</h1>
+				</div>
+				<div class="col-sm-5 col-sm-offset-1">
+					{% for post in posts %}
+			      <h2 class="w-300 color-dark mb-10 xs-mb-10">Title: {{ post.title [2]}}</h2>
+			      <p class="xs-mw">Post: {{ post.description [2] }}
+			    {% endfor %}
+				</div>
+			</div>
+		</div>
+    <img src="{{ url_for('static', filename='img/iphone6.min.png')}}" alt class="mb-80 hidden-xs iphone-inline">
+			</div>
+		</div>
+	</div>
+	<div class="level level-img-right">
+		<div class="container xs-mb-30">
+			<img src="{{ url_for('static', filename='img/iphone-bg-lg.min.png')}}" class="img-right-sprite">
+			<div class="row mb-60 xs-mb-20">
+				<div class="col-sm-6 col-lg-offset-1 col-lg-5">
+					<h1 class="mb-20 xs-mb-10 heading color-dark heading-bordered xl-heading-outdent">Latest blogs</h1>
+					<h2 class="w-300 color-dark mb-10"></h2>
+					<p class=xs-mw>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer text-center">
+	<p class="fmenu">
+		<a href="/welcome">HOME</a> | <a href="/">YOUR BLOG</a>
+	</p>
+	</div>
+
+
+{% endblock %}
